@@ -36,7 +36,7 @@ pbmc <- RenameIdents(pbmc, new.cluster.ids)
 jpeg('$home/scRNA-seq Dataset/Results/scRNA-seq_Results.jpeg')
 DimPlot(pbmc, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 dev.off()
-saveRDS(pbmc, file = "C:/Users/aishw/OneDrive/Desktop/Semester 3/BIOL 8803/Group Project/scRNA-seq Dataset/Results/scRNA-seq.rds")
+saveRDS(pbmc, file = "$home/scRNA-seq Dataset/Results/scRNA-seq.rds")
 
 
 
