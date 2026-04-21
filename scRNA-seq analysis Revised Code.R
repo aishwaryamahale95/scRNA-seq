@@ -4,7 +4,7 @@ library(patchwork)
 
 
 # Load the PBMC dataset
-pbmc.data <- Read10X(data.dir = "C:/Users/aishw/OneDrive/Desktop/Semester 3/BIOL 8803/Group Project/scRNA-seq Dataset/GSM4829411/")
+pbmc.data <- Read10X(data.dir = "$home/scRNA-seq Dataset/GSM4829411/")
 # Initialize the Seurat object with the raw (non-normalized data).
 pbmc <- CreateSeuratObject(counts = pbmc.data, project = "pbmc3k", min.cells = 3, min.features = 200)
 pbmc
@@ -33,7 +33,7 @@ new.cluster.ids <- c("Naive CD4 T", "CD14+ Mono", "Memory CD4 T", "B", "CD8 T", 
                      "NK", "DC", "Platelet", "RBC")
 names(new.cluster.ids) <- levels(pbmc)
 pbmc <- RenameIdents(pbmc, new.cluster.ids)
-jpeg('C:/Users/aishw/OneDrive/Desktop/Semester 3/BIOL 8803/Group Project/scRNA-seq Dataset/Results/scRNA-seq_Results.jpeg')
+jpeg('$home/scRNA-seq Dataset/Results/scRNA-seq_Results.jpeg')
 DimPlot(pbmc, reduction = "umap", label = TRUE, pt.size = 0.5) + NoLegend()
 dev.off()
 saveRDS(pbmc, file = "C:/Users/aishw/OneDrive/Desktop/Semester 3/BIOL 8803/Group Project/scRNA-seq Dataset/Results/scRNA-seq.rds")
